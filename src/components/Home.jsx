@@ -1,6 +1,7 @@
 import About from "./About";
 import Header from "./Header";
 import Events from "./Events";
+import Contact from "./Contact";
 
 function Home() {
     return (
@@ -8,6 +9,7 @@ function Home() {
         <Header/>
         <About/>
         <Events/>
+        <Contact/>
         </div>
     )
 }

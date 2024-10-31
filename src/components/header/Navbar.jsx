@@ -8,7 +8,7 @@ function Navbar() {
       <nav>
         <ScrollLink to="about">About</ScrollLink>
         <ScrollLink to="events">Events</ScrollLink>
-        <ScrollLink tp="contact">Contact</ScrollLink>
+        <ScrollLink to="contact">Contact</ScrollLink>
       </nav>
     </div>
   );

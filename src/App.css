@@ -51,7 +51,7 @@ html {
 }
 .navbar__container nav a:hover {
   color: rgb(0, 0, 0);
-  background-color: rgb(212, 163, 115);
+  background-color: rgba(255, 217, 0, 0.804);
   border-radius: 10px;
 }
 
@@ -79,8 +79,7 @@ html {
 }
 
 .about__container {
-  padding-top: 30px;
-  padding-inline: 20px;
+  padding: 30px 20px 20px 20px;
   background-color: #000;
   /* color: rgb(184, 115, 51); */
   display: flex;
@@ -113,7 +112,40 @@ html {
   width: 100%;
   background-color: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 30px;
-  padding-inline: 20px;
+  align-items: center;
+  padding: 30px 20px 20px 20px;
+}
+
+.events__container h2 {
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.events__container .events__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.events__container .events__row .events__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.events__container .events__row .events__col img {
+  width: 100%;
+  height: auto;
+  max-height: 230px;
+}
+
+.events__container .events__row .events__col p {
+text-align: justify;
+line-height: 1.3;
+padding: 5px;
 }
