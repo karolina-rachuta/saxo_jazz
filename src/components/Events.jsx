@@ -8,7 +8,7 @@ function Events() {
       <h2>Events</h2>
       <div className="events__row">
         <div className="events__col">
-          <img  height="307" width="460"src={Events1} alt="" />
+          <img  height="307" width="460" src={Events1} alt="" />
           <h3>Weddings</h3>
           <p>Celebrate love with the perfect soundtrack. Our team ensures every moment of your wedding is unforgettable.</p>
         </div>
