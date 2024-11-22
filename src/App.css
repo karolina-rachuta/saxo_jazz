@@ -8,13 +8,19 @@ html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: normal;
-  background-color:  rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
   color: rgba(255, 217, 0, 0.804);
+  margin: 0 auto;
+  width: 100%;
+
+  @media only screen and (max-width: 576px) {
+    display: flex;
+    align-items: center;
+  }
 }
 .container {
   width: 100%;
   max-width: 1600px;
-  /* padding: 20px; */
   margin: 0 auto;
   background-color: rgb(0, 0, 0);
 
@@ -48,7 +54,6 @@ html {
   gap: 30px;
 }
 .navbar__container nav a {
-  /* color: rgb(184, 115, 51); */
   padding: 10px 20px;
   text-decoration: none;
   font-size: 20px;
@@ -62,34 +67,69 @@ html {
 }
 
 .hero__container {
-  background-image: url(./assets/Hero.jpg);
+  background-image: url(./assets/Hero1600.webp);
   background-size: cover;
-  background-position: center -120px;
-  height: 100vh;
+  background-position: center;
   width: 100%;
+  height: 100vh;
+  max-height: 967px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   padding-top: 100px;
-  padding-left: 100px;
+  padding-left: 20px;
+  position: relative;
+}
+
+@media only screen and (max-width: 992px) {
+  .hero__container {
+    background-image: url(./assets/Hero992.webp);
+    padding-left: 10px;
+    padding-top: 50px;
+    max-height: 651px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero__container {
+    background-image: url(./assets/Hero576.webp);
+    max-height: 384px;
+    padding-left: 5px;
+  }
+}
+
+.hero__container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.2;
+  z-index: 0;
+  @media only screen and (max-width: 992px) {
+    opacity: 0;
+  }
 }
 
 .hero__container h1 {
   font-family: "Cinzel", serif;
   font-size: 50px;
   padding-bottom: 20px;
+  z-index: 1;
 }
 
 .hero__container p {
   font-family: "Cinzel", serif;
   font-size: 30px;
   font-weight: 400;
+  z-index: 1;
 }
 
 .about__container {
   padding: 30px 20px 20px 20px;
   background-color: #000;
-  /* color: rgb(184, 115, 51); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,15 +147,16 @@ html {
   align-items: center;
   gap: 40px;
 }
-.about__container .about__box img {
+.about__container .about__box .about__img {
   width: 40%;
+  height: auto;
 }
+
 .about__container .about__box .about__text {
   width: 40%;
   text-align: justify;
   font-size: 20px;
   line-height: 2;
-  /* color: rgb(184, 115, 51); */
 }
 
 .events__container {
@@ -152,7 +193,8 @@ html {
 .events__container .events__row .events__col img {
   width: 100%;
   height: auto;
-  max-height: 230px;
+  max-width: 460px;
+  max-height: 307px;
   margin-bottom: 5px;
 }
 
