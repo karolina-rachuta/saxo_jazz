@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body,
 html {
   font-family: "Roboto", sans-serif;
@@ -12,24 +13,31 @@ html {
   color: rgba(255, 217, 0, 0.804);
   margin: 0 auto;
   width: 100%;
+}
 
-  @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
+  body,
+  html {
     display: flex;
     flex-direction: column;
   }
 }
+
 .container {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
   background-color: rgb(0, 0, 0);
-
-  @media only screen and (min-width: 1600px) {
+}
+@media only screen and (min-width: 1600px) {
+  .container {
     border-right: 1px solid rgb(20, 20, 20);
     border-left: 1px solid rgb(20, 20, 20);
   }
+}
 
-  @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
+  .container {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -41,11 +49,13 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  @media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 576px) {
+  .navbar__container {
     flex-direction: column;
   }
 }
+
 .navbar__container .logo {
   width: 100%;
   max-width: 150px;
@@ -53,12 +63,16 @@ html {
   padding-left: 20px;
   display: block;
   cursor: pointer;
-  @media only screen and (max-width: 576px) {
+}
+
+@media only screen and (max-width: 576px) {
+  .navbar__container .logo {
     padding: 20px 25px 0 0;
     max-width: 120px;
     align-self: end;
   }
 }
+
 .navbar__container nav {
   font-family: "Cinzel", serif;
   width: 70%;
@@ -67,13 +81,16 @@ html {
   align-items: center;
   justify-content: end;
   gap: 30px;
-  @media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 576px) {
+  .navbar__container nav {
     width: 100%;
     gap: 10px;
     padding: 20px 10px 20px 10px;
     justify-content: center;
   }
 }
+
 .navbar__container nav a {
   padding: 10px 20px;
   text-decoration: none;
@@ -100,6 +117,7 @@ html {
   padding-top: 100px;
   padding-left: 20px;
   position: relative;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 992px) {
@@ -113,8 +131,8 @@ html {
 @media only screen and (max-width: 576px) {
   .hero__container {
     background-image: url(./assets/Hero576.webp);
-    max-height: 384px;
     padding-left: 15px;
+    padding-top: 150px;
   }
 }
 
@@ -125,18 +143,32 @@ html {
   bottom: 0;
   left: 0;
   right: 0;
-  background: black;
-  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 0;
-  /* @media only screen and (max-width: 992px) {
-    opacity: 0;
-  } */
+}
+
+@media only screen and (max-width: 576px) {
+  .hero__container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
 }
 
 .hero__container h1 {
   font-family: "Cinzel", serif;
   font-size: 50px;
   padding-bottom: 20px;
+  position: relative;
   z-index: 1;
 
   @media only screen and (max-width: 576px) {
@@ -149,6 +181,7 @@ html {
   font-family: "Cinzel", serif;
   font-size: 30px;
   font-weight: 400;
+  position: relative;
   z-index: 1;
 
   @media only screen and (max-width: 576px) {
@@ -165,8 +198,9 @@ html {
   align-items: center;
   position: relative;
   z-index: 0;
-
-  @media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 992px) {
+  .about__container {
     flex-direction: column;
     padding: 30px 5px 20px 5px;
     background-image: url("./assets/drum.webp");
@@ -174,16 +208,16 @@ html {
   }
 }
 
-.about__container .about__box:after {
-  @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+  .about__container::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: black;
-    opacity: 0.7;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
   }
 }
 
@@ -191,6 +225,7 @@ html {
   font-family: "Cinzel", serif;
   margin-bottom: 40px;
   font-size: 40px;
+  position: relative;
   z-index: 1;
 }
 
@@ -200,8 +235,10 @@ html {
   justify-content: center;
   align-items: center;
   gap: 40px;
+}
 
-  @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+  .about__container .about__box {
     flex-direction: column;
     gap: 10px;
   }
@@ -210,7 +247,9 @@ html {
 .about__container .about__box .about__img {
   width: 40%;
   height: auto;
-  @media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 992px) {
+  .about__container .about__box .about__img {
     display: none;
   }
 }
@@ -220,16 +259,20 @@ html {
   text-align: justify;
   font-size: 20px;
   line-height: 2;
+  position: relative;
   z-index: 1;
+}
 
-  @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+  .about__container .about__box .about__text {
     width: 80%;
     padding-inline: 15px;
     z-index: 1;
-    opacity: 1;
     position: relative;
   }
-  @media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 576px) {
+  .about__container .about__box .about__text {
     width: 100%;
     padding-inline: 10px;
   }
@@ -243,7 +286,10 @@ html {
   justify-content: center;
   align-items: center;
   padding: 30px 20px 20px 20px;
-  @media only screen and (max-width: 576px) {
+}
+
+@media only screen and (max-width: 576px) {
+  .events__container {
     padding: 30px 5px 20px 5px;
   }
 }
@@ -261,8 +307,10 @@ html {
   align-items: start;
   gap: 20px;
   width: 100%;
+}
 
-  @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
+  .events__container .events__row {
     flex-direction: column;
     align-items: center;
     gap: 40px;
@@ -277,8 +325,10 @@ html {
   gap: 20px;
   width: 30%;
   font-size: 20px;
+}
 
-  @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
+  .events__container .events__row .events__col {
     width: 100%;
   }
 }
@@ -296,11 +346,13 @@ html {
   line-height: 2;
   padding-inline: 25px;
   font-size: 16px;
-
-  @media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 992px) {
+  .events__container .events__row .events__col p {
     padding-inline: 10px;
   }
 }
+
 .contact__container {
   width: 100%;
   background-color: #000;
@@ -323,21 +375,21 @@ html {
   padding-bottom: 40px;
   width: 80%;
   max-width: 700px;
-
-  @media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 576px) {
+  .contact__container .contact__box {
     width: 100%;
   }
 }
 
-.contact__container .contact__box h3{
+.contact__container .contact__box h3 {
   padding-bottom: 10px;
   font-family: "Cinzel", serif;
 }
 
-.contact__container .contact__box p{
+.contact__container .contact__box p {
   padding-bottom: 5px;
 }
-
 
 .contact__container .contact__box form {
   display: flex;
@@ -409,11 +461,18 @@ html {
   cursor: pointer;
 }
 
-.footer__container .footer__contact h3{
+@media only screen and (max-width: 576px) {
+  .footer__container .logo {
+    padding-left: 0;
+    max-width: 100px;
+  }
+}
+
+.footer__container .footer__contact h3 {
   padding-bottom: 5px;
   font-family: "Cinzel", serif;
 }
 
-.footer__container .footer__contact p{
+.footer__container .footer__contact p {
   padding-bottom: 5px;
 }
