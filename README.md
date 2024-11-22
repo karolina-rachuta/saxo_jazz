@@ -20,3 +20,6 @@ https://saxo-jazz-djs.web.app/
 ## Aknowledge
 - Unsplash (Camara Negra, Engin Akyurt, Israel Palacio, Vitalii Khodzinskyi).
 - Google Fonts.
+
+## MIT License:
+Copyright © 2024 Saxo Jazz DJs. All rights reserved.
